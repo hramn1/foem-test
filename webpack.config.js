@@ -11,7 +11,7 @@ module.exports = {
     open: true,
     historyApiFallback: true,
     inline: true,
-    port: 1338,
+    port: 1337,
   },
   module: {
     rules: [
@@ -21,7 +21,22 @@ module.exports = {
         use: {
           loader: `babel-loader`,
         },
-      }
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          'style-loader',
+          // Translates CSS into CommonJS
+          'css-loader',
+          // Compiles Sass to CSS
+          'sass-loader',
+        ],
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader']
+      },
     ],
   },
   devtool: `source-map`,

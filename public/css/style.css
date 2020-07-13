@@ -1,0 +1,6 @@
+.contacts-group__item--calendar{
+  background-image: url(../img/calendar-alt-solid.svg);
+  background-repeat: no-repeat;
+  background-position: 95% 50%;
+  background-size: 20px;
+}
